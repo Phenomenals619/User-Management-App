@@ -59,7 +59,6 @@
   <artifactId>postgresql</artifactId>
   <version>42.7.3</version> <!-- Or latest -->
 </dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>

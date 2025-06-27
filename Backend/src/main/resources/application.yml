@@ -1,18 +1,37 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/spring_user_management
-    username: postgres
-    password: root
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+ spring:
+   datasource:
+     url: jdbc:postgresql://pg-1c24110-thephenomenals619.c.aivencloud.com:26786/defaultdb?sslmode=require
+     username: avnadmin
+     password: AVNS_9w8w9H-9lJCb-c7rJlI
+     driver-class-name: org.postgresql.Driver
 
-jwt:
-  secretKey: y1Z3H8Y3hUcqBdXOpSk9vOrIMBz8abqZihKfHQVp07K1cVZShZh9mGBWr8f+RvAP
-  expiration: 3600000
+   jpa:
+     database-platform: org.hibernate.dialect.PostgreSQLDialect
+     hibernate:
+       ddl-auto: update
+     show-sql: true
 
-server:
-  port: 8089
+ jwt:
+   secretKey: y1Z3H8Y3hUcqBdXOpSk9vOrIMBz8abqZihKfHQVp07K1cVZShZh9mGBWr8f+RvAP
+   expiration: 3600000
+
+ server:
+   port: 8089
+#spring:
+#  datasource:
+#    url: ${SPRING_DATASOURCE_URL}
+#    username: ${SPRING_DATASOURCE_USERNAME}
+#    password: ${SPRING_DATASOURCE_PASSWORD}
+#    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+#  jpa:
+#    database-platform: ${SPRING_JPA_DATABASE_PLATFORM}
+#    hibernate:
+#      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+#    show-sql: ${SPRING_JPA_SHOW_SQL}
+#
+#jwt:
+#  secretKey: ${JWT_SECRETKEY}
+#  expiration: ${JWT_EXPIRATION}
+#
+#server:
+#  port: 8090
