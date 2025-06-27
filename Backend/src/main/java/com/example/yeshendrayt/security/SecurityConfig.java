@@ -83,7 +83,7 @@ public class SecurityConfig {
 	public CorsConfigurationSource crosConfigurationSource() {
 		
 		CorsConfiguration configuration=new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000","http://localhost:5173"));
+		configuration.setAllowedOrigins(Arrays.asList("https://bespoke-concha-b738a8.netlify.app/"));
 		configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","OPTIONS"));
 		configuration.setAllowedHeaders(Arrays.asList("*"));
 		configuration.setAllowCredentials(true);
