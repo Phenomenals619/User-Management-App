@@ -42,7 +42,7 @@ public class AuthController {
 
 		ResponseCookie cookie = ResponseCookie.from("JWT", loginResponseDTO.getJwtToken()).httpOnly(true).secure(true)
 				.path("/").maxAge(1 * 60 * 60)// 1 hour
-				.sameSite("Strict").build();
+				.sameSite("None").build();
 
 
 
