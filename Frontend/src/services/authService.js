@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //set your backend base url
-const BASE_URL = "http://localhost:8089";
+const BASE_URL = "https://user-management-app-1-9zd8.onrender.com";
 
 // create axios instance
 const api = axios.create({
