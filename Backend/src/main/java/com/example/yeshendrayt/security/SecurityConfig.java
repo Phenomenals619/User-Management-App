@@ -83,7 +83,7 @@ public class SecurityConfig {
 	public CorsConfigurationSource crosConfigurationSource() {
 		
 		CorsConfiguration configuration=new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList("https://bespoke-concha-b738a8.netlify.app"));
+		configuration.setAllowedOrigins(Arrays.asList("https://user-management-app-rust-chi.vercel.app"));
 		configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","OPTIONS"));
 		configuration.setAllowedHeaders(Arrays.asList("*"));
 		configuration.setAllowCredentials(true);
