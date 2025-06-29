@@ -41,7 +41,7 @@ public class SecurityConfig {
 		
 		http.csrf(csrf -> csrf.disable())
 		.headers(headers ->headers.frameOptions(frameOption -> frameOption.disable()))
-		.cors(cors -> cors.configurationSource(crosConfigurationSource()))
+		.cors(cors -> cors.configurationSource(corsConfigurationSource()))
 		.authorizeHttpRequests(
 				auth -> auth
 				.requestMatchers("/auth/**").permitAll()
@@ -80,18 +80,32 @@ public class SecurityConfig {
 	}
 
 	@Bean
-	public CorsConfigurationSource crosConfigurationSource() {
+public CorsConfigurationSource corsConfigurationSource() {
+    CorsConfiguration configuration = new CorsConfiguration();
+    configuration.setAllowedOriginPatterns(Arrays.asList("https://user-management-app-rust-chi.vercel.app"));
+    configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+    configuration.setAllowedHeaders(Arrays.asList("*"));
+    configuration.setExposedHeaders(Arrays.asList("Authorization"));
+    configuration.setAllowCredentials(true);
+
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/**", configuration);
+    return source;
+}
+
+	// @Bean
+	// public CorsConfigurationSource corsConfigurationSource() {
 		
-		CorsConfiguration configuration=new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList("https://user-management-app-rust-chi.vercel.app"));
-		configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","OPTIONS"));
-		configuration.setAllowedHeaders(Arrays.asList("*"));
-		configuration.setAllowCredentials(true);
+	// 	CorsConfiguration configuration=new CorsConfiguration();
+	// 	configuration.setAllowedOrigins(Arrays.asList("https://user-management-app-rust-chi.vercel.app"));
+	// 	configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","OPTIONS"));
+	// 	configuration.setAllowedHeaders(Arrays.asList("*"));
+	// 	configuration.setAllowCredentials(true);
 		
-		UrlBasedCorsConfigurationSource source=new UrlBasedCorsConfigurationSource();
+	// 	UrlBasedCorsConfigurationSource source=new UrlBasedCorsConfigurationSource();
 		
-		source.registerCorsConfiguration("/**", configuration);
-		return source;
+	// 	source.registerCorsConfiguration("/**", configuration);
+	// 	return source;
 		
-	}
+	// }
 }
